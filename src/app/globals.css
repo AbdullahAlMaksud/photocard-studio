@@ -1,0 +1,227 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Local Custom Font: Purno */
+@font-face {
+  font-family: "Purno";
+  src: url("/fonts/Purno Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Purno";
+  src: url("/fonts/Purno Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Purno";
+  src: url("/fonts/Purno Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Purno";
+  src: url("/fonts/Purno Bold-Italic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@import "@fontsource/manrope/400.css";
+@import "@fontsource/manrope/500.css";
+@import "@fontsource/manrope/600.css";
+@import "@fontsource/manrope/700.css";
+@import "@fontsource/space-grotesk/500.css";
+@import "@fontsource/space-grotesk/600.css";
+@import "@fontsource/space-grotesk/700.css";
+
+/* Built-in slide & site fonts */
+@import "@fontsource/poppins/400.css";
+@import "@fontsource/poppins/500.css";
+@import "@fontsource/poppins/600.css";
+@import "@fontsource/poppins/700.css";
+@import "@fontsource/hind-siliguri/400.css";
+@import "@fontsource/hind-siliguri/500.css";
+@import "@fontsource/hind-siliguri/600.css";
+@import "@fontsource/hind-siliguri/700.css";
+@import "@fontsource/noto-sans-bengali/400.css";
+@import "@fontsource/noto-sans-bengali/500.css";
+@import "@fontsource/noto-sans-bengali/600.css";
+@import "@fontsource/noto-sans-bengali/700.css";
+@import "@fontsource/anek-bangla/400.css";
+@import "@fontsource/anek-bangla/500.css";
+@import "@fontsource/anek-bangla/600.css";
+@import "@fontsource/anek-bangla/700.css";
+@import "@fontsource/tiro-bangla/400.css";
+@import "@fontsource/noto-serif-bengali/400.css";
+@import "@fontsource/noto-serif-bengali/500.css";
+@import "@fontsource/noto-serif-bengali/600.css";
+@import "@fontsource/noto-serif-bengali/700.css";
+
+:root {
+  color-scheme: light;
+  --radius: 0.75rem;
+
+  /* CardCraft Studio Theme - Light Studio Default */
+  --background: #f8f9fd;
+  --foreground: #18181b;
+
+  --card: #ffffff;
+  --card-foreground: #18181b;
+
+  --popover: #ffffff;
+  --popover-foreground: #18181b;
+
+  /* Signature CardCraft Purple Accent */
+  --primary: #6c5ce7;
+  --primary-foreground: #ffffff;
+
+  --secondary: #f1f3fa;
+  --secondary-foreground: #27272a;
+
+  --muted: #f4f5fa;
+  --muted-foreground: #71717a;
+
+  --accent: #eeeefc;
+  --accent-foreground: #18181b;
+
+  --destructive: #ef4444;
+
+  --border: #e8eaf2;
+  --input: #e8eaf2;
+  --ring: #6c5ce7;
+
+  --canvas: #f1f3f9;
+  --canvas-dot: #d8dce8;
+  --canvas-foreground: #18181b;
+
+  --accent-mint: #10a37f;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #0f0f13;
+  --foreground: #f4f4f5;
+
+  --card: #18181f;
+  --card-foreground: #f4f4f5;
+
+  --popover: #1c1c24;
+  --popover-foreground: #f4f4f5;
+
+  --primary: #6c5ce7;
+  --primary-foreground: #ffffff;
+
+  --secondary: #22222c;
+  --secondary-foreground: #e4e4e7;
+
+  --muted: #1e1e27;
+  --muted-foreground: #a1a1aa;
+
+  --accent: #272736;
+  --accent-foreground: #f4f4f5;
+
+  --destructive: #dc2626;
+
+  --border: #2c2c3a;
+  --input: #2c2c3a;
+  --ring: #6c5ce7;
+
+  --canvas: #14141a;
+  --canvas-dot: #2a2a36;
+  --canvas-foreground: #f4f4f5;
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-canvas: var(--canvas);
+  --color-canvas-foreground: var(--canvas-foreground);
+  --color-accent-mint: var(--accent-mint);
+
+  --font-sans: "Purno", "Hind Siliguri", "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Purno", "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  border-color: var(--border);
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) transparent;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.canvas-surface {
+  background-color: var(--canvas);
+  background-image: radial-gradient(var(--canvas-dot) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+/* Custom Slim Theme-Colored Scrollbar Globally */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 9999px;
+  opacity: 0.8;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+  filter: brightness(1.2);
+}
+
+.thin-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) transparent;
+}
+
+.thin-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 9999px;
+}
