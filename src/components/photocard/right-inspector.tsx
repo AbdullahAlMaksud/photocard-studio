@@ -15,6 +15,14 @@ interface RightInspectorProps {
 export const RightInspector = ({ onClose }: RightInspectorProps) => {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = React.useState<"content" | "style" | "slide">("content");
+  const containerRef = React.useRef<HTMLDivElement>(null);
+
+  const handleWheel = (e: React.WheelEvent<HTMLDivElement>) => {
+    e.stopPropagation();
+    if (containerRef.current) {
+      containerRef.current.scrollTop += e.deltaY;
+    }
+  };
 
   return (
     <aside data-lenis-prevent className="flex h-full min-h-0 w-full lg:w-96 shrink-0 flex-col lg:border-l border-border bg-card overflow-hidden">
@@ -74,7 +82,12 @@ export const RightInspector = ({ onClose }: RightInspectorProps) => {
       </div>
 
       {/* Inspector Panel Body */}
-      <div data-lenis-prevent className="flex-1 min-h-0 overflow-y-auto overscroll-contain thin-scrollbar bg-card">
+      <div
+        ref={containerRef}
+        data-lenis-prevent
+        onWheel={handleWheel}
+        className="flex-1 min-h-0 overflow-y-auto overscroll-contain thin-scrollbar bg-card"
+      >
         {activeTab === "content" && <ContentSettingsPanel />}
         {activeTab === "style" && <StyleLayoutPanel />}
         {activeTab === "slide" && <SlideSettingsPanel />}

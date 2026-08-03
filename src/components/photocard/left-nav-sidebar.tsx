@@ -25,6 +25,14 @@ export const LeftNavSidebar = () => {
   const projectName = usePhotocardStore((s) => s.projectName);
   const ratio = usePhotocardStore((s) => s.ratio);
   const setRatio = usePhotocardStore((s) => s.setRatio);
+  const sidebarRef = React.useRef<HTMLElement>(null);
+
+  const handleWheel = (e: React.WheelEvent<HTMLElement>) => {
+    e.stopPropagation();
+    if (sidebarRef.current) {
+      sidebarRef.current.scrollTop += e.deltaY;
+    }
+  };
 
   const mainNavItems: NavItem[] = [
     { href: "/editor", labelKey: "nav.editor", icon: Edit3 },
@@ -41,7 +49,12 @@ export const LeftNavSidebar = () => {
   };
 
   return (
-    <aside data-lenis-prevent className="flex h-full min-h-0 w-64 shrink-0 flex-col justify-between border-r border-border/80 bg-card p-4 overflow-y-auto overscroll-contain thin-scrollbar">
+    <aside
+      ref={sidebarRef}
+      onWheel={handleWheel}
+      data-lenis-prevent
+      className="flex h-full min-h-0 w-64 shrink-0 flex-col justify-between border-r border-border/80 bg-card p-4 overflow-y-auto overscroll-contain thin-scrollbar"
+    >
       <div className="flex flex-col gap-5">
         {/* Brand Header */}
         <Link href="/" className="flex items-center gap-3 px-1 pt-1 transition-opacity hover:opacity-90">
