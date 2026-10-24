@@ -211,5 +211,3 @@ Website: [abdullahalmaksud.com](https://abdullahalmaksud.com)
 LinkedIn: [@AbdullahAlMaksud](https://linkedin.com/in/AbdullahAlMaksud)
 
 GitHub: [@AbdullahAlMaksud](https://github.com/AbdullahAlMaksud)
-
-Project Repository: [photocard-studio](https://github.com/AbdullahAlMaksud/photocard-studio)
