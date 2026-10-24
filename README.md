@@ -2,8 +2,6 @@
 
 **Short Description:** A browser-based photocard and carousel slide generator for social media, featuring Bangla typography, batch slide creation, customizable templates, and high-resolution PNG export.
 
-**Technology Badges:**
-
 [![pnpm](https://img.shields.io/badge/pnpm-10+-4a4a55?style=for-the-badge&logo=pnpm&logoColor=f69220)](https://pnpm.io/)
 [![Next.js](https://img.shields.io/badge/Next.js-16.4-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.5-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
@@ -74,14 +72,16 @@ With live previews, customizable typography, reusable templates, and batch expor
 - **Batch Export:** [JSZip](https://stuk.github.io/jszip/) and [file-saver](https://github.com/eligrey/FileSaver.js)
 - **Internationalization:** [i18next](https://www.i18next.com/) and [react-i18next](https://react.i18next.com/)
 
+---
+
 ## Getting Started
 
 ### Prerequisites
 
 Make sure you have the following installed:
 
-- Node.js 20 or later
-- pnpm 10 or later
+- [Node.js 20.9 or later](https://nodejs.org/)
+- [pnpm 10 or later](https://pnpm.io/installation)
 
 Install pnpm globally if needed:
 
@@ -106,11 +106,9 @@ pnpm install
 
 **3. Configure environment variables (Optional)**
 
-Copy the example environment file if your local setup requires it:
+Create a `.env.local` file in the project root and configure the required variables using `.env.example` as your reference, if your local setup requires it.
 
-```bash
-cp .env.example .env
-```
+See [Environment Variables](#environment-variables) for details.
 
 **4. Start the development server**
 
@@ -122,11 +120,14 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ### Environment Variables
 
-Available environment variables and their descriptions are documented in `.env.example`.
+Photocard Studio uses environment variables to configure application services and external integrations.
 
-To use the optional variables, copy `.env.example` to `.env` and fill in the required values.
+1. Create a `.env.local` file in the project root.
+2. Review `.env.example` for available variables and their intended use.
+3. Configure the required settings for MongoDB Atlas and GitHub API integration, as applicable.
+4. Keep credentials and access tokens private.
 
-Never commit real environment files containing secrets or private credentials.
+Never commit your real `.env.local` file or expose private credentials in client-side code.
 
 ### Available Scripts
 
@@ -155,16 +156,18 @@ Never commit real environment files containing secrets or private credentials.
 
 ### Deployment
 
-The easiest deployment option is [Vercel](https://vercel.com/). Import the GitHub repository, and Vercel can detect the Next.js application and pnpm configuration.
+Photocard Studio can be deployed to [Vercel](https://vercel.com/) or another hosting platform that supports Next.js.
 
-To self-host on a compatible server, build and start the production application:
+Before deploying, configure the environment variables required by your chosen storage integrations and ensure that the database and GitHub API settings are correct.
+
+To build and run the production application:
 
 ```bash
 pnpm build
 pnpm start
 ```
 
-Ensure the deployment environment has the required Node.js and pnpm versions.
+For platform-specific instructions, consult the [Next.js deployment documentation](https://nextjs.org/docs/app/getting-started/deploying).
 
 ## Contributing
 
