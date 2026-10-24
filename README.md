@@ -1,16 +1,19 @@
-# Photocard Studio
+# Photocard Studio - Design Once, Generate Many
 
-> Social media photocard and carousel slide generator built for creating, customizing, and exporting high-resolution cards directly in the browser.
+A browser-based photocard and carousel slide generator for social media, featuring Bangla font support, batch slide creation, customizable templates, and high-resolution PNG export.
 
-<!-- Optional badges: keep to 2-4 at most -->
-![Next.js](https://img.shields.io/badge/Next.js-16.4.3-black.svg)
-![React](https://img.shields.io/badge/React-19.2.4-blue.svg)
-![pnpm](https://img.shields.io/badge/pnpm-v11-orange.svg)
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
+[![pnpm](https://img.shields.io/badge/pnpm-9+-4a4a55?style=for-the-badge&logo=pnpm&logoColor=f69220)](https://pnpm.io/)
+[![Next.js](https://img.shields.io/badge/Next.js-16.4-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.5-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38bdf8?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
-![Screenshot](./public/photo-svgrepo-com.svg)
 
-**Live demo:** [photocard-studio.vercel.app](https://photocard-studio.vercel.app)
+<p align="center">
+  <img width="49%" alt="Photocard Studio screenshot 1" src="https://github.com/user-attachments/assets/1c0b7b36-3b55-459e-9463-3ab208922cc7" />
+  <img width="49%" alt="Photocard Studio screenshot 2" src="https://github.com/user-attachments/assets/922fffe8-fd0c-4445-902d-364cad97e137" />
+</p>
 
 ## Table of Contents
 
@@ -67,7 +70,7 @@ cd photocard-studio
 # 2. Install dependencies
 pnpm install
 
-# 3. Create your local environment file
+# 3. (Optional) Create your local environment file
 cp .env.example .env
 
 # 4. Start the development server
@@ -80,7 +83,7 @@ The app will be available at `http://localhost:3000`.
 
 All optional environment variables are listed, with short descriptions, in [`.env.example`](./.env.example).
 
-Copy it to `.env` and fill in your own values before running the project. Never commit your real `.env` file.
+To use them, copy the file to `.env` and fill in your own values. Never commit your real `.env` file.
 
 ## Available Scripts
 
@@ -109,7 +112,9 @@ Copy it to `.env` and fill in your own values before running the project. Never 
 
 ## Deployment
 
-Deploy to Vercel by importing the repository directly. Vercel automatically detects Next.js and pnpm to build and deploy the application.
+The easiest way is Vercel: import the repository and it will detect Next.js and pnpm automatically, with no extra configuration needed.
+
+To self-host on your own server instead:
 
 ```bash
 pnpm build
