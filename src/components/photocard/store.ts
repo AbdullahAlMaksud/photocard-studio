@@ -5,7 +5,10 @@ import { createSlide, defaultCreditBox, defaultCreditStyle, defaultLogoBox, defa
 import type { PresetTemplate } from "./templates/preset-templates";
 import type { BoxTransform, LogoState, OverlaySettings, RatioKey, SlideData, TextFieldState, TextStyle, UploadedFont, UploadedImage } from "./types";
 
-const initialSlide = createSlide("");
+const initialSlide: SlideData = {
+  ...createSlide(""),
+  id: "initial-slide-1",
+};
 
 interface PhotocardStore {
   projectName: string;

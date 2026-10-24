@@ -18,7 +18,7 @@ export const ThemeToggle = () => {
       size="icon"
       onClick={toggleTheme}
       className="h-8 w-8 text-muted-foreground hover:text-foreground"
-      title={t("theme.toggle")}
+      title={t("theme.toggle", "থিম পরিবর্তন")}
     >
       {theme === "dark" ? <Sun className="size-4" /> : <Moon className="size-4" />}
     </Button>
