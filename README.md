@@ -1,137 +1,197 @@
-# Photocard Studio - Design Once, Generate Many
+# Photocard Studio — Design Once, Generate Many
 
-A browser-based photocard and carousel slide generator for social media, featuring Bangla font support, batch slide creation, customizable templates, and high-resolution PNG export.
+**Short Description:** A browser-based photocard and carousel slide generator for social media, featuring Bangla typography, batch slide creation, customizable templates, and high-resolution PNG export.
 
-[![pnpm](https://img.shields.io/badge/pnpm-9+-4a4a55?style=for-the-badge&logo=pnpm&logoColor=f69220)](https://pnpm.io/)
+**Technology Badges:**
+
+[![pnpm](https://img.shields.io/badge/pnpm-10+-4a4a55?style=for-the-badge&logo=pnpm&logoColor=f69220)](https://pnpm.io/)
 [![Next.js](https://img.shields.io/badge/Next.js-16.4-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.5-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38bdf8?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38bdf8?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
-
 
 <p align="center">
   <img width="49%" alt="Photocard Studio screenshot 1" src="https://github.com/user-attachments/assets/1c0b7b36-3b55-459e-9463-3ab208922cc7" />
   <img width="49%" alt="Photocard Studio screenshot 2" src="https://github.com/user-attachments/assets/922fffe8-fd0c-4445-902d-364cad97e137" />
 </p>
 
+---
+
 ## Table of Contents
 
-- [About](#about)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Getting Started](#getting-started)
-- [Environment Variables](#environment-variables)
-- [Available Scripts](#available-scripts)
-- [Project Structure](#project-structure)
-- [Deployment](#deployment)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+- About
+- Features
+- Tech Stack
+- Getting Started
+- Contributing
+- License
+- Contact
 
 ## About
 
-Photocard Studio is an all-in-one browser-based design and export application tailored for content creators, news publishers, Islamic page administrators, and social media managers. It streamlines the creation of uniform photocards and multi-slide carousel sets without needing heavyweight desktop software. Everything operates directly within the browser, providing instant live previews, rich typography customization, and high-resolution exports with complete data privacy.
+Photocard Studio is an all-in-one, browser-based design and export application built for content creators, news publishers, Islamic page administrators, and social media managers. It simplifies the creation of visually consistent photocards and multi-slide carousel sets without requiring heavyweight desktop software.
+
+With live previews, customizable typography, reusable templates, and batch export capabilities, Photocard Studio provides an efficient workflow for creating social media graphics directly in the browser.
 
 ## Features
 
-- Client-side high-resolution PNG and ZIP batch export with zero server processing
-- One-click batch slide generator to create 10+ carousel cards simultaneously
-- Curated preset templates for Breaking News, Islamic Quotes, Motivational Thoughts, and Sports
-- Multi-aspect ratio artboard support: 1:1 (Square), 3:4 (Portrait), 16:9 (Wide), and 1:2 (Tall)
-- Native Bengali font suite (Purno local font, Hind Siliguri, Anek Bangla, Tiro Bangla, Noto) plus custom font uploader (.ttf, .otf, .woff)
-- Interactive brand logo cropper (circle, square, freeform) and multi-element alignment toolbar
-- Automatic workspace saving and project recovery backed by browser LocalStorage
-- Fully bilingual interface (English and Bengali) with dark and light themes
+- **High-Resolution PNG Export:** Export designs as high-resolution PNG images directly in the browser without server-side processing.
+- **Batch Slide Generation:** Create 10 or more carousel cards simultaneously with a one-click workflow.
+- **Customizable Templates:** Start with curated templates for Breaking News, Islamic Quotes, Motivational Thoughts, and Sports.
+- **Multiple Artboard Ratios:** Design for 1:1 (Square), 3:4 (Portrait), 16:9 (Wide), and 1:2 (Tall) formats.
+- **Batch ZIP Export:** Download multiple generated slides together in a ZIP archive.
+- **Bilingual Interface:** Switch between English and Bengali, with support for both dark and light themes.
+- **Automatic Workspace Recovery:** Save workspace data in browser LocalStorage and recover projects across sessions.
+
+### Typography & Customization
+
+- **Bengali Font Support:** Use Purno, Hind Siliguri, Anek Bangla, Tiro Bangla, and Noto fonts.
+- **Custom Font Uploads:** Upload and use custom `.ttf`, `.otf`, and `.woff` fonts directly in the browser.
+- **Brand Logo Cropper:** Crop logos into circle, square, or freeform shapes.
+- **Alignment Toolbar:** Arrange and align multiple design elements for consistent layouts.
+
+### Templates & Canvas Formats
+
+- Use curated templates for different social media content categories.
+- Choose from four artboard aspect ratios to suit different publishing needs.
+- Generate consistent multi-slide carousel designs with batch creation tools.
+
+### Export & Workflow
+
+- Export individual designs as high-resolution PNG files.
+- Export multiple slides in a ZIP archive.
+- Create and manage designs using browser-based tools without server-side image processing.
+- Recover saved workspace data using LocalStorage.
 
 ## Tech Stack
 
-- **Framework:** Next.js 16 (App Router, Turbopack)
-- **Language:** TypeScript, React 19
-- **Styling:** Tailwind CSS v4, Radix UI primitives
-- **State Management:** Zustand (with LocalStorage persistence)
-- **Export Engine:** html-to-image, JSZip, file-saver
-- **Internationalization:** i18next, react-i18next
+- **Package Manager:** [pnpm](https://pnpm.io/)
+- **Framework:** [Next.js 16](https://nextjs.org/) — App Router and Turbopack
+- **Language:** [TypeScript](https://www.typescriptlang.org/) and React 19
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/) and Radix UI primitives
+- **State Management:** Zustand with LocalStorage persistence
+- **Image Export:** [html-to-image](https://github.com/bubkoo/html-to-image)
+- **Batch Export:** [JSZip](https://stuk.github.io/jszip/) and [file-saver](https://github.com/eligrey/FileSaver.js)
+- **Internationalization:** [i18next](https://www.i18next.com/) and [react-i18next](https://react.i18next.com/)
 
 ## Getting Started
 
 ### Prerequisites
 
+Make sure you have the following installed:
+
 - Node.js 20 or later
 - pnpm 10 or later
 
-### Installation
+Install pnpm globally if needed:
 
 ```bash
-# 1. Clone the repository
+npm install -g pnpm
+```
+
+### Installation
+
+**1. Clone the repository**
+
+```bash
 git clone https://github.com/AbdullahAlMaksud/photocard-studio.git
 cd photocard-studio
+```
 
-# 2. Install dependencies
+**2. Install dependencies**
+
+```bash
 pnpm install
+```
 
-# 3. (Optional) Create your local environment file
+**3. Configure environment variables (Optional)**
+
+Copy the example environment file if your local setup requires it:
+
+```bash
 cp .env.example .env
+```
 
-# 4. Start the development server
+**4. Start the development server**
+
+```bash
 pnpm dev
 ```
 
-The app will be available at `http://localhost:3000`.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Environment Variables
+### Environment Variables
 
-All optional environment variables are listed, with short descriptions, in [`.env.example`](./.env.example).
+Available environment variables and their descriptions are documented in `.env.example`.
 
-To use them, copy the file to `.env` and fill in your own values. Never commit your real `.env` file.
+To use the optional variables, copy `.env.example` to `.env` and fill in the required values.
 
-## Available Scripts
+Never commit real environment files containing secrets or private credentials.
+
+### Available Scripts
 
 | Command | Description |
 | --- | --- |
-| `pnpm dev` | Start the development server |
-| `pnpm build` | Create a production build |
-| `pnpm start` | Run the production build |
-| `pnpm lint` | Run the linter |
+| `pnpm dev` | Start the development server. |
+| `pnpm build` | Create a production build. |
+| `pnpm start` | Run the production build. |
+| `pnpm lint` | Run the linter. |
 
-## Project Structure
+### Project Structure
 
 ```text
 .
 ├── src/
-│   ├── app/            # Routes and pages (Next.js App Router)
-│   ├── components/     # Reusable UI components and studio modules
-│   ├── lib/            # Utilities, helpers, and i18n configuration
-│   └── types/          # Shared TypeScript types
-├── public/             # Static assets and custom fonts
-├── .env.example        # Environment variable reference
-├── pnpm-lock.yaml      # pnpm lockfile
-├── pnpm-workspace.yaml # pnpm workspace and build configuration
+│   ├── app/                 # Routes and pages (Next.js App Router)
+│   ├── components/          # Reusable UI components and studio modules
+│   ├── lib/                 # Utilities, helpers, and i18n configuration
+│   └── types/               # Shared TypeScript types
+├── public/                  # Static assets and custom fonts
+├── .env.example             # Environment variable reference
+├── pnpm-lock.yaml           # pnpm lockfile
+├── pnpm-workspace.yaml      # pnpm workspace and build configuration
 └── README.md
 ```
 
-## Deployment
+### Deployment
 
-The easiest way is Vercel: import the repository and it will detect Next.js and pnpm automatically, with no extra configuration needed.
+The easiest deployment option is [Vercel](https://vercel.com/). Import the GitHub repository, and Vercel can detect the Next.js application and pnpm configuration.
 
-To self-host on your own server instead:
+To self-host on a compatible server, build and start the production application:
 
 ```bash
 pnpm build
 pnpm start
 ```
 
+Ensure the deployment environment has the required Node.js and pnpm versions.
+
 ## Contributing
 
 Contributions are welcome.
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/your-feature`
-3. Commit your changes: `git commit -m "Add your feature"`
-4. Push the branch: `git push origin feature/your-feature`
-5. Open a pull request
+1. Fork the repository.
+2. Create a feature branch:
 
-For larger changes, please open an issue first to discuss what you would like to change.
+   ```bash
+   git checkout -b feature/your-feature
+   ```
+
+3. Commit your changes:
+
+   ```bash
+   git commit -m "Add your feature"
+   ```
+
+4. Push the branch:
+
+   ```bash
+   git push origin feature/your-feature
+   ```
+
+5. Open a pull request.
+
+For larger changes, please open an issue first to discuss the proposed improvements.
 
 ## License
 
@@ -139,6 +199,14 @@ Distributed under the MIT License. See [`LICENSE`](./LICENSE) for details.
 
 ## Contact
 
-Abdullah Al Maksud - [@AbdullahAlMaksud](https://github.com/AbdullahAlMaksud)
+**Abdullah Al Maksud**
 
-Project link: [https://github.com/AbdullahAlMaksud/photocard-studio](https://github.com/AbdullahAlMaksud/photocard-studio)
+Email: [maksud.workspace@gmail.com](mailto:maksud.workspace@gmail.com)
+
+Website: [abdullahalmaksud.com](https://abdullahalmaksud.com)
+
+LinkedIn: [@AbdullahAlMaksud](https://linkedin.com/in/AbdullahAlMaksud)
+
+GitHub: [@AbdullahAlMaksud](https://github.com/AbdullahAlMaksud)
+
+Project Repository: [photocard-studio](https://github.com/AbdullahAlMaksud/photocard-studio)
