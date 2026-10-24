@@ -101,6 +101,9 @@ export const resources = {
         bn: "বাংলা",
         en: "English",
       },
+      theme: {
+        toggle: "থিম পরিবর্তন",
+      },
     },
   },
   en: {
@@ -202,21 +205,17 @@ export const resources = {
         bn: "বাংলা",
         en: "English",
       },
+      theme: {
+        toggle: "Toggle Theme",
+      },
     },
   },
 };
 
 if (!i18n.isInitialized) {
-  let savedLang = "bn";
-  if (typeof window !== "undefined") {
-    try {
-      savedLang = localStorage.getItem("photocard-studio-lang") || "bn";
-    } catch {}
-  }
-
   i18n.use(initReactI18next).init({
     resources,
-    lng: savedLang,
+    lng: "bn",
     fallbackLng: "bn",
     interpolation: {
       escapeValue: false,

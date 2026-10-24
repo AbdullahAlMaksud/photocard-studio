@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 
 import { I18nProvider } from "@/components/i18n-provider";
 import { LenisProvider } from "@/components/lenis-provider";
@@ -22,10 +23,12 @@ const THEME_INIT_SCRIPT = `
 const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
   return (
     <html lang="bn" className="min-h-screen antialiased" suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
-      </head>
       <body className="flex min-h-screen flex-col font-sans">
+        <Script
+          id="theme-init"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }}
+        />
         <I18nProvider>
           <LenisProvider>{children}</LenisProvider>
         </I18nProvider>
