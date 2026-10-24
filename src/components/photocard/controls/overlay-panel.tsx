@@ -18,8 +18,6 @@ const DIRECTIONS: { value: OverlayDirection; label: string }[] = [
   { value: "solid-top", label: "উপর থেকে সলিড কালার" },
 ];
 
-const isSolid = (direction: OverlayDirection) => direction === "solid-top" || direction === "solid-bottom";
-
 export const OverlayPanel = () => {
   const overlay = usePhotocardStore((s) => s.overlay);
   const updateOverlay = usePhotocardStore((s) => s.updateOverlay);

@@ -1,5 +1,4 @@
 import { toPng } from "html-to-image";
-import { saveAs } from "file-saver";
 import JSZip from "jszip";
 
 import { usePhotocardStore } from "./store";

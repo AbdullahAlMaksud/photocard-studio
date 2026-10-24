@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Check, Crop, Move, RotateCcw, X, ZoomIn } from "lucide-react";
+import { Check, Crop, Move, RotateCcw, ZoomIn } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
@@ -16,12 +16,17 @@ interface LogoCropModalProps {
 
 type CropShape = "circle" | "square" | "free";
 
-export const LogoCropModal = ({
-  isOpen,
-  onClose,
+interface LogoCropModalContentProps {
+  imageSrc: string;
+  onClose: () => void;
+  onCropComplete: (croppedDataUrl: string) => void;
+}
+
+const LogoCropModalContent = ({
   imageSrc,
+  onClose,
   onCropComplete,
-}: LogoCropModalProps) => {
+}: LogoCropModalContentProps) => {
   const [zoom, setZoom] = React.useState(1);
   const [offset, setOffset] = React.useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const [cropShape, setCropShape] = React.useState<CropShape>("circle");
@@ -30,15 +35,6 @@ export const LogoCropModal = ({
 
   const containerRef = React.useRef<HTMLDivElement>(null);
   const imgRef = React.useRef<HTMLImageElement>(null);
-
-  // Reset controls when new image is loaded
-  React.useEffect(() => {
-    if (isOpen) {
-      setZoom(1);
-      setOffset({ x: 0, y: 0 });
-      setCropShape("circle");
-    }
-  }, [isOpen, imageSrc]);
 
   // Dragging handlers for interactive panning
   const handleMouseDown = (e: React.MouseEvent | React.TouchEvent) => {
@@ -150,11 +146,8 @@ export const LogoCropModal = ({
     onClose();
   };
 
-  if (!isOpen || !imageSrc) return null;
-
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md border-border bg-card p-5 text-foreground rounded-3xl">
+    <DialogContent className="sm:max-w-md border-border bg-card p-5 text-foreground rounded-3xl">
         <DialogHeader className="flex flex-row items-center justify-between pb-2 border-b border-border/80">
           <DialogTitle className="text-sm font-bold flex items-center gap-2">
             <Crop className="size-4 text-primary" />
@@ -311,6 +304,25 @@ export const LogoCropModal = ({
           </Button>
         </div>
       </DialogContent>
+  );
+};
+
+export const LogoCropModal = ({
+  isOpen,
+  onClose,
+  imageSrc,
+  onCropComplete,
+}: LogoCropModalProps) => {
+  return (
+    <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
+      {isOpen && imageSrc ? (
+        <LogoCropModalContent
+          key={imageSrc}
+          imageSrc={imageSrc}
+          onClose={onClose}
+          onCropComplete={onCropComplete}
+        />
+      ) : null}
     </Dialog>
   );
 };

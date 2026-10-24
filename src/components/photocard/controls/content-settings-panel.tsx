@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Check, Layers, Minus, Pencil, Plus, Sparkles, Trash2, X } from "lucide-react";
+import { Check, Pencil, Plus, Sparkles, Trash2, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 import { Button } from "@/components/ui/button";
@@ -32,11 +32,6 @@ export const ContentSettingsPanel = () => {
   const slides = usePhotocardStore((s) => s.slides);
   const activeSlideId = usePhotocardStore((s) => s.activeSlideId);
   const setActiveSlideId = usePhotocardStore((s) => s.setActiveSlideId);
-
-  const useSameSubtitleForAll = usePhotocardStore((s) => s.useSameSubtitleForAll);
-  const setUseSameSubtitleForAll = usePhotocardStore((s) => s.setUseSameSubtitleForAll);
-  const globalSubtitle = usePhotocardStore((s) => s.globalSubtitle);
-  const updateGlobalSubtitle = usePhotocardStore((s) => s.updateGlobalSubtitle);
 
   const useSameCreditForAll = usePhotocardStore((s) => s.useSameCreditForAll);
   const setUseSameCreditForAll = usePhotocardStore((s) => s.setUseSameCreditForAll);

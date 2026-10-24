@@ -1,8 +1,9 @@
 {
   "name": "photocard-studio",
   "version": "1.0.0",
-  "description": "সোশ্যাল মিডিয়া ফটোকার্ড ও স্লাইড জেনারেটর — সম্পূর্ণ ব্রাউজারে তৈরি ও এক্সপোর্ট করুন",
+  "description": "Social Media Photocard and Slide Generator — create, customize, and export high-resolution cards directly in the browser",
   "author": "Abdullah Al Maksud",
+  "packageManager": "pnpm@11.18.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/AbdullahAlMaksud/photocard-studio.git"
@@ -42,7 +43,7 @@
     "jszip": "^3.10.1",
     "lenis": "^1.3.25",
     "lucide-react": "^1.28.0",
-    "next": "16.2.12",
+    "next": "16.4.3",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-i18next": "^17.0.11",
@@ -58,7 +59,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.2.12",
+    "eslint-config-next": "16.4.3",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

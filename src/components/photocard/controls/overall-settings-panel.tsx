@@ -16,7 +16,6 @@ import {
   Upload,
   X,
 } from "lucide-react";
-import { useTranslation } from "react-i18next";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -28,7 +27,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
-import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 
 import { usePhotocardStore } from "../store";
@@ -36,7 +34,6 @@ import type { OverlayDirection, RatioKey } from "../types";
 import { BUILT_IN_FONTS } from "../types";
 
 export const OverallSettingsPanel = () => {
-  const { t } = useTranslation();
   const bgInputRef = React.useRef<HTMLInputElement>(null);
   const logoInputRef = React.useRef<HTMLInputElement>(null);
   const fontInputRef = React.useRef<HTMLInputElement>(null);

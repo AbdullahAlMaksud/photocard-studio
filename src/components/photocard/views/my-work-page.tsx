@@ -31,32 +31,37 @@ export const MyWorkPage = ({ onOpenProject, onNewProject }: MyWorkPageProps) => 
   const storeProjectName = usePhotocardStore((s) => s.projectName);
 
   React.useEffect(() => {
-    try {
-      const raw = localStorage.getItem("photocard-studio-progress");
-      if (raw) {
-        const parsed = JSON.parse(raw);
-        const stateSlides = parsed.state?.slides || [];
-        const stateRatio = parsed.state?.ratio || "1:1";
-        const stateName = parsed.state?.projectName || "Untitled Project";
+    const frame = requestAnimationFrame(() => {
+      try {
+        const raw = localStorage.getItem("photocard-studio-progress");
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          const stateSlides = parsed.state?.slides || [];
+          const stateRatio = parsed.state?.ratio || "1:1";
+          const stateName = parsed.state?.projectName || "Untitled Project";
 
-        if (stateSlides.length > 0) {
-          const currentProject: SavedProjectItem = {
-            id: "current-active-project",
-            name: stateName,
-            slidesCount: stateSlides.length,
-            updatedAt: new Date().toLocaleDateString("bn-BD", {
-              month: "short",
-              day: "numeric",
-              hour: "2-digit",
-              minute: "2-digit",
-            }),
-            firstSlideTitle: stateSlides[0]?.title || "খালি স্লাইড",
-            ratio: stateRatio,
-          };
-          setSavedProjects([currentProject]);
+          if (stateSlides.length > 0) {
+            const currentProject: SavedProjectItem = {
+              id: "current-active-project",
+              name: stateName,
+              slidesCount: stateSlides.length,
+              updatedAt: new Date().toLocaleDateString("bn-BD", {
+                month: "short",
+                day: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+              }),
+              firstSlideTitle: stateSlides[0]?.title || "খালি স্লাইড",
+              ratio: stateRatio,
+            };
+            setSavedProjects([currentProject]);
+            return;
+          }
         }
+      } catch {
+        // fallback
       }
-    } catch {
+
       if (slides.length > 0) {
         setSavedProjects([
           {
@@ -69,7 +74,9 @@ export const MyWorkPage = ({ onOpenProject, onNewProject }: MyWorkPageProps) => 
           },
         ]);
       }
-    }
+    });
+
+    return () => cancelAnimationFrame(frame);
   }, [slides, ratio, storeProjectName]);
 
   const handleDeleteProject = (id: string) => {

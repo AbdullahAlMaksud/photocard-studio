@@ -4,9 +4,7 @@ import * as React from "react";
 import {
   ArrowRight,
   Download,
-  FileText,
   Folder,
-  Layers,
   Palette,
   Plus,
   Save,

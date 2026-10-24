@@ -4,12 +4,14 @@ import * as React from "react";
 import { I18nextProvider } from "react-i18next";
 import i18n from "@/lib/i18n";
 
-export const I18nProvider = ({ children }: { children: React.ReactNode }) => {
-  const [mounted, setMounted] = React.useState(false);
+const emptySubscribe = () => () => {};
 
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
+export const I18nProvider = ({ children }: { children: React.ReactNode }) => {
+  const mounted = React.useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false
+  );
 
   if (!mounted) {
     return <>{children}</>;

@@ -1,7 +1,6 @@
 "use client";
 
 import { Plus } from "lucide-react";
-import { useTranslation } from "react-i18next";
 
 import { cn } from "@/lib/utils";
 
@@ -9,7 +8,6 @@ import { getEffectiveImage } from "./selectors";
 import { usePhotocardStore } from "./store";
 
 export const SlideFilmstrip = () => {
-  const { t } = useTranslation();
   const slides = usePhotocardStore((s) => s.slides);
   const activeSlideId = usePhotocardStore((s) => s.activeSlideId);
   const setActiveSlideId = usePhotocardStore((s) => s.setActiveSlideId);
