@@ -1,6 +1,6 @@
 # Photocard Studio — Design Once, Generate Many
 
-**Short Description:** A browser-based photocard and carousel slide generator for social media, featuring Bangla typography, batch slide creation, customizable templates, and high-resolution PNG export.
+A browser-based photocard and carousel slide generator for social media, featuring Bangla typography, batch slide creation, customizable templates, and high-resolution PNG export.
 
 [![pnpm](https://img.shields.io/badge/pnpm-10+-4a4a55?style=for-the-badge&logo=pnpm&logoColor=f69220)](https://pnpm.io/)
 [![Next.js](https://img.shields.io/badge/Next.js-16.4-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
